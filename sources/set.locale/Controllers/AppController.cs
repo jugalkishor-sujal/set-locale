@@ -121,7 +121,7 @@ namespace set.locale.Controllers
         }
 
         [HttpGet]
-        public async Task<ViewResult> Words(string id, int page = 0)
+        public async Task<ViewResult> Words(string id, int page = 1)
         {
             if (page < 1)
             {
