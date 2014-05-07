@@ -39,7 +39,7 @@ namespace SetLocale.Client.Web.Controllers
         }
 
         [HttpGet, AllowAnonymous]
-        public async Task<ViewResult> All(int id = 0)
+        public async Task<ViewResult> All(int id = 1)//default value 1 save one comparsion & assignment step from below if statement
         {
             var pageNumber = id;
             if (pageNumber < 1)
@@ -100,7 +100,7 @@ namespace SetLocale.Client.Web.Controllers
         {
             if (!model.IsValidForNew())
             {
-                model.Msg = "bir sorun oluştu";
+                model.Msg = "bir sorun oluştu";//we can perform translation of message 
                 return View(model);
             }
 
@@ -109,7 +109,7 @@ namespace SetLocale.Client.Web.Controllers
             var key = await _wordService.Create(model);
             if (key == null)
             {
-                model.Msg = "bir sorun oluştu, daha önce eklenmiş olabilir";
+                model.Msg = "bir sorun oluştu, daha önce eklenmiş olabilir";//we can perform translation of message 
                 return View(model);
             }
 
